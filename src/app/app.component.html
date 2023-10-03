@@ -1,0 +1,31 @@
+<h1>{{ title }}</h1>
+test
+<mat-stepper
+	orientation="horizontal"
+	formArrayName="stack"
+	#stepper
+	labelPosition="bottom"
+>
+	<mat-step>
+		<ng-template matStepLabel>Step 1</ng-template>
+
+		<ng-template #myTemplate let-item>
+			<p>
+				<mat-form-field appearance="outline">
+					<mat-label>Example</mat-label>
+					<textarea
+						matInput
+						id="example"
+						[formControl]="item"
+					></textarea>
+					<mat-hint>Example</mat-hint>
+				</mat-form-field>
+			</p>
+		</ng-template>
+
+		<button matStepperNext>Next</button>
+	</mat-step>
+	<mat-step>
+		<ng-template matStepLabel>Step 2</ng-template>
+	</mat-step>
+</mat-stepper>
