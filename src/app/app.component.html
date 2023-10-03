@@ -1,31 +1,26 @@
-<h1>{{ title }}</h1>
-test
-<mat-stepper
-	orientation="horizontal"
-	formArrayName="stack"
-	#stepper
-	labelPosition="bottom"
->
-	<mat-step>
-		<ng-template matStepLabel>Step 1</ng-template>
+<mat-stepper>
+  <mat-step>
+    <ng-template matStepLabel>Step 1</ng-template>
 
-		<ng-template #myTemplate let-item>
-			<p>
-				<mat-form-field appearance="outline">
-					<mat-label>Example</mat-label>
-					<textarea
-						matInput
-						id="example"
-						[formControl]="item"
-					></textarea>
-					<mat-hint>Example</mat-hint>
-				</mat-form-field>
-			</p>
-		</ng-template>
+      <app-template-step></app-template-step>
 
-		<button matStepperNext>Next</button>
-	</mat-step>
-	<mat-step>
-		<ng-template matStepLabel>Step 2</ng-template>
-	</mat-step>
+    <button matStepperNext>Next</button>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Step 2</ng-template>
+
+    <h2>From TemplateRef(TemplateStepComponent.template) - validation error when untouched and pristine</h2>
+    <ng-container *ngTemplateOutlet="template;  context: {$implicit: item}"></ng-container>
+
+    <h2>Declared here - no validation error</h2>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Example</mat-label>
+        <textarea matInput
+                  id="example"
+                  [formControl]="item"></textarea>
+        <mat-hint>Example</mat-hint>
+      </mat-form-field>
+    </p>
+  </mat-step>
 </mat-stepper>

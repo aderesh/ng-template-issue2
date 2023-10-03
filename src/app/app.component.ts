@@ -1,21 +1,18 @@
-import { Component } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { MatSnackBar } from "@angular/material/snack-bar";
+import { Component, TemplateRef } from "@angular/core";
+import { FormControl, Validators } from "@angular/forms";
+import { TemplateStepComponent } from "./template-step/template-step.component";
 
 @Component({
-	selector: "app-root",
-	templateUrl: "./app.component.html",
+  selector: "app-root",
+  templateUrl: "./app.component.html",
 })
 export class AppComponent {
-	title = "Angular 16 Material Starter";
+  // step 1 is in TemplateStep component
 
-	constructor(private snackBar: MatSnackBar) {}
+  // step2
+  item: FormControl = new FormControl("", Validators.required);
 
-	item: FormControl<string> = new FormControl();
-
-	handleClick() {
-		this.snackBar.open("Button clicked", "ok", {
-			duration: 3000,
-		});
-	}
+  get template(): TemplateRef<any> {
+    return TemplateStepComponent.template;
+  }
 }
