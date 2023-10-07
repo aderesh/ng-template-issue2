@@ -1,0 +1,58 @@
+<p>template is hidden here</p>
+
+<ng-template #rootTemplate
+             let-item>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Example</mat-label>
+      <textarea matInput
+                id="example"
+                [formControl]="item"></textarea>
+      <mat-hint>Example</mat-hint>
+    </mat-form-field>
+  </p>
+</ng-template>
+
+<mat-stepper>
+  <mat-step>
+    <ng-template matStepLabel>Step 1</ng-template>
+
+    <ng-template #stepTemplate1
+                 let-item>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Example</mat-label>
+          <textarea matInput
+                    id="example"
+                    [formControl]="item"></textarea>
+          <mat-hint>Example</mat-hint>
+        </mat-form-field>
+      </p>
+    </ng-template>
+
+    <button matStepperNext
+            type="button">Next</button>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Step 2</ng-template>
+
+    <ng-template #stepTemplate2
+                 let-item>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Example</mat-label>
+          <textarea matInput
+                    id="example"
+                    [formControl]="item"></textarea>
+          <mat-hint>Example</mat-hint>
+        </mat-form-field>
+      </p>
+
+    </ng-template>
+
+    <button (click)="log()">Log</button>
+
+  </mat-step>
+</mat-stepper>
+
+<a routerLink="/second">Second</a>

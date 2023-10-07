@@ -1,0 +1,26 @@
+<h2>Outside template with Root</h2>
+<ng-container *ngTemplateOutlet="outsideTemplateWithRoot;  context: {$implicit: item}"></ng-container>
+
+<h2>Outside template with Step1(seen)</h2>
+<ng-container *ngTemplateOutlet="outsideTemplateWithStep1;  context: {$implicit: item}"></ng-container>
+
+<h2>Outside template with Step2(not seen)</h2>
+<ng-container *ngTemplateOutlet="outsideTemplateWithStep2;  context: {$implicit: item}"></ng-container>
+
+<mat-stepper>
+  <mat-step>
+    <ng-template matStepLabel>Step 1</ng-template>
+
+    <h2>inside template with Root</h2>
+    <ng-container *ngTemplateOutlet="outsideTemplateWithRoot;  context: {$implicit: item}"></ng-container>
+
+    <h2>inside template with Step1(seen)</h2>
+    <ng-container *ngTemplateOutlet="outsideTemplateWithStep1;  context: {$implicit: item}"></ng-container>
+
+    <h2>inside template with Step2(not seen)</h2>
+    <ng-container *ngTemplateOutlet="outsideTemplateWithStep2;  context: {$implicit: item}"></ng-container>
+
+    <button matStepperNext
+            type="button">Next</button>
+  </mat-step>
+</mat-stepper>

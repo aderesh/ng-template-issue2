@@ -7,24 +7,28 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatStepperModule } from "@angular/material/stepper";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from "./app.component";
-import { TemplateStepComponent } from './template-step/template-step.component';
+import { FirstComponent } from './first/first.component';
+import { SecondComponent } from './second/second.component';
+import { RouterModule } from "@angular/router";
 
 @NgModule({
-	declarations: [AppComponent, TemplateStepComponent],
-	imports: [
+  declarations: [AppComponent, FirstComponent, SecondComponent],
+  imports: [
+    AppRoutingModule,
 		FormsModule,
-		ReactiveFormsModule,
-		CommonModule,
-		MatButtonModule,
-		MatSnackBarModule,
-		MatStepperModule,
-		BrowserAnimationsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatStepperModule,
+    BrowserAnimationsModule,
     MatInputModule,
-		MatFormFieldModule,
-	],
-	providers: [],
-	bootstrap: [AppComponent],
+    MatFormFieldModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
