@@ -17,6 +17,8 @@ export class SecondComponent implements OnInit {
   outsideTemplateWithStep1: TemplateRef<any> = FirstComponent.stepTemplate1
   outsideTemplateWithStep2: TemplateRef<any> = FirstComponent.stepTemplate2
 
+  firstProperty = "second"
+
 
   @ViewChild('myTemplate', { static: true })
   myTemplate!: TemplateRef<any>
@@ -25,6 +27,11 @@ export class SecondComponent implements OnInit {
 
   ngOnInit(): void {
     this.template = this.myTemplate;
+  }
 
+  count: number = 0;
+
+  updateFirst() {
+    FirstComponent.Instance.firstProperty = FirstComponent.Instance.firstProperty + this.count++;
   }
 }

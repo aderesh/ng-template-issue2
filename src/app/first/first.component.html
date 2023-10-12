@@ -1,4 +1,4 @@
-<p>template is hidden here</p>
+<p>template starts here</p>
 
 <ng-template #rootTemplate
              let-item>
@@ -8,14 +8,18 @@
       <textarea matInput
                 id="example"
                 [formControl]="item"></textarea>
-      <mat-hint>Example</mat-hint>
+      <mat-hint>{{firstProperty}}</mat-hint>
     </mat-form-field>
   </p>
 </ng-template>
 
+<p>template ends here</p>
+
 <mat-stepper>
   <mat-step>
     <ng-template matStepLabel>Step 1</ng-template>
+
+    <h3>second template </h3>
 
     <ng-template #stepTemplate1
                  let-item>
@@ -25,13 +29,14 @@
           <textarea matInput
                     id="example"
                     [formControl]="item"></textarea>
-          <mat-hint>Example</mat-hint>
+          <mat-hint>{{firstProperty}}</mat-hint>
         </mat-form-field>
       </p>
     </ng-template>
 
     <button matStepperNext
-            type="button">Next</button>
+            type="button"
+            (click)="onNext()">Next</button>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Step 2</ng-template>
@@ -44,7 +49,7 @@
           <textarea matInput
                     id="example"
                     [formControl]="item"></textarea>
-          <mat-hint>Example</mat-hint>
+          <mat-hint>{{firstProperty}}</mat-hint>
         </mat-form-field>
       </p>
 

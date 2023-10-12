@@ -13,9 +13,10 @@ import { AppComponent } from "./app.component";
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { RouterModule } from "@angular/router";
+import { ThirdComponent } from './third/third.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, SecondComponent],
+  declarations: [AppComponent, FirstComponent, SecondComponent, ThirdComponent],
   imports: [
     AppRoutingModule,
 		FormsModule,
