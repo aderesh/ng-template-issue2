@@ -10,13 +10,11 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from "./app.component";
-import { FirstComponent } from './first/first.component';
-import { SecondComponent } from './second/second.component';
 import { RouterModule } from "@angular/router";
 import { ThirdComponent } from './third/third.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, SecondComponent, ThirdComponent],
+  declarations: [AppComponent, ThirdComponent],
   imports: [
     AppRoutingModule,
 		FormsModule,
