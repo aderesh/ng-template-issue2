@@ -7,6 +7,5 @@ import { FormControl, Validators } from "@angular/forms";
   styleUrls: ['./third.component.scss']
 })
 export class ThirdComponent {
-  test = "testBinding"
   item: FormControl = new FormControl("", Validators.required);
 }

@@ -1,3 +1,4 @@
+<h3>Root template is declared here, before mat-stepper</h3>
 <ng-template #stepTemplateRoot
              let-item>
   <p>
@@ -14,8 +15,8 @@
 <mat-stepper>
   <mat-step>
     <ng-template matStepLabel>Step 1</ng-template>
-    <h2>template is declared here</h2>
-    <ng-template #stepTemplateA
+    <h2>Step template is declared</h2>
+    <ng-template #stepTemplate
                  let-item>
       <p>
         <mat-form-field appearance="outline">
@@ -33,14 +34,12 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Step 2</ng-template>
-    <h2>mat-stepper marks mat-form-field inside of the template as invalid</h2>
+    <h2>mat-stepper marks mat-form-field inside of the template as invalid. As a result, all `ngTemplateOutlet` are also highlighted</h2>
   </mat-step>
 </mat-stepper>
 
-<h2>Template outside of mat-stepper</h2>
-<!-- <ng-container *ngTemplateOutlet="stepTemplateA;  context: {$implicit: item}"></ng-container> -->
+<h2>Uses Root template declared outside of mat-stepper</h2>
 <div *ngTemplateOutlet="stepTemplateRoot;  context: {$implicit: item}"></div>
 
-<h2>Template inside of mat-stepper</h2>
-<!-- <ng-container *ngTemplateOutlet="stepTemplateA;  context: {$implicit: item}"></ng-container> -->
-<div *ngTemplateOutlet="stepTemplateA;  context: {$implicit: item}"></div>
+<h2>Template Step template declared inside of mat-stepper>mat-step</h2>
+<div *ngTemplateOutlet="stepTemplate;  context: {$implicit: item}"></div>
